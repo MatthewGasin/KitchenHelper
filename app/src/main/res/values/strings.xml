@@ -3,4 +3,5 @@
     <string name="Save_Recipe">Save Recipe</string>
     <string name="View_My_Recipes">View my recipes</string>
     <string name="New_Recipe">New Recipe</string>
+    <string name="Loading">Loading...</string>
 </resources>

@@ -14,4 +14,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RecipeActivity.class);
         startActivity(intent);
     }
+
+    protected void onRestart(){
+        super.onRestart();
+        Intent intent = new Intent(this, RecipeActivity.class);
+        startActivity(intent);
+    }
 }
