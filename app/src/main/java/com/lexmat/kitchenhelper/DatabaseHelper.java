@@ -1,5 +1,6 @@
 package com.lexmat.kitchenhelper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,4 +30,17 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
+    public boolean insertRecipe(Recipe recipe){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_1, recipe.getName());
+        contentValues.put(COL_2, recipe.getIngredientNames());
+        contentValues.put(COL_3, recipe.getIngredientAmounts());
+        contentValues.put(COL_4, recipe.getIngredientTypes());
+
+        return !(db.insert(TABLE_NAME,null,contentValues) == -1);
+    }
+
 }

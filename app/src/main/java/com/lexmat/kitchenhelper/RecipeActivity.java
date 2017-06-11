@@ -8,10 +8,15 @@ import android.widget.Toast;
 
 public class RecipeActivity extends AppCompatActivity {
 
+    DatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+
+        db = new DatabaseHelper(this);
+
     }
 
     public void onSave(View view) {

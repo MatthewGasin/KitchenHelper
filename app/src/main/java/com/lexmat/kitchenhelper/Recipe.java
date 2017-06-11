@@ -8,7 +8,7 @@ public class Recipe {
     final static String INGREDIENT_SEPARATOR = "~";
 
     private String ingredientNames;
-    private double    ingredientAmounts;
+    private String    ingredientAmounts;
     private String ingredientTypes;
 
     /* Example recipe
@@ -18,11 +18,18 @@ public class Recipe {
     ingredientTypes =   "cup~cup~tablespoon~ "
      */
 
-    public Recipe(String name, String ingredientNames, double ingredientAmounts, String ingredientTypes) {
+    public Recipe(String name, String ingredientNames, String ingredientAmounts, String ingredientTypes) {
         this.name = name;
         this.ingredientNames = ingredientNames;
         this.ingredientAmounts = ingredientAmounts;
         this.ingredientTypes = ingredientTypes;
+    }
+
+    public Recipe() {
+        this.name = "default";
+        this.ingredientNames = "default";
+        this.ingredientAmounts = "default";
+        this.ingredientTypes = "default";
     }
 
     public String getName() {
@@ -45,11 +52,12 @@ public class Recipe {
         this.ingredientNames = ingredientNames;
     }
 
-    public double getIngredientAmounts() {
+
+    public String getIngredientAmounts() {
         return ingredientAmounts;
     }
 
-    public void setIngredientAmounts(double ingredientAmounts) {
+    public void setIngredientAmounts(String ingredientAmounts) {
         this.ingredientAmounts = ingredientAmounts;
     }
 
@@ -60,4 +68,5 @@ public class Recipe {
     public void setIngredientTypes(String ingredientTypes) {
         this.ingredientTypes = ingredientTypes;
     }
+
 }
