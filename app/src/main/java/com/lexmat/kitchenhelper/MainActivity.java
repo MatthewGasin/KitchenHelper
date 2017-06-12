@@ -36,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
             editor.commit();
         }
 
-
-
-
+        //start the recipe activity with the default recipe
         Intent intent = new Intent(this, RecipeActivity.class);
+        intent.putExtra("name","Recipe");
+        intent.putExtra("ingredientNames","Ingredient A~Ingredient B~Ingredient C");
+        intent.putExtra("ingredientAmounts","1~2~2");
+        intent.putExtra("ingredientTypes","Cup~Teaspoon~Pound");
         startActivity(intent);
     }
 

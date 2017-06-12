@@ -1,5 +1,7 @@
 package com.lexmat.kitchenhelper;
 
+import java.util.ArrayList;
+
 public class Recipe {
 
     private String name;
@@ -67,6 +69,33 @@ public class Recipe {
 
     public void setIngredientTypes(String ingredientTypes) {
         this.ingredientTypes = ingredientTypes;
+    }
+
+    public ArrayList<String> getIngredients(){
+        String names = getIngredientNames();
+        String amounts = getIngredientAmounts();
+        String types = getIngredientTypes();
+
+        ArrayList<String> ingredients = new ArrayList<String>();
+
+        while(names.contains(INGREDIENT_SEPARATOR)){
+            String ingredient = "";
+            ingredient += names.substring(0, names.indexOf(INGREDIENT_SEPARATOR)) + " ";
+            ingredient += amounts.substring(0, amounts.indexOf(INGREDIENT_SEPARATOR)) + " ";
+            ingredient += types.substring(0, types.indexOf(INGREDIENT_SEPARATOR)) + " ";
+
+            names = parse(names);
+            amounts = parse(amounts);
+            types = parse(types);
+            ingredients.add(ingredient);
+        }
+        ingredients.add(names+" "+amounts+" "+types);
+
+        return ingredients;
+    }
+
+    private String parse(String s){
+        return s.substring(s.indexOf(INGREDIENT_SEPARATOR)+1);
     }
 
 }

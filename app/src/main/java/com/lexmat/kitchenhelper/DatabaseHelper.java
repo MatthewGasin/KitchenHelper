@@ -2,8 +2,11 @@ package com.lexmat.kitchenhelper;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String DATABASE_NAME = "Recipe.db";
@@ -42,5 +45,24 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         return !(db.insert(TABLE_NAME,null,contentValues) == -1);
     }
+
+    public ArrayList<String> getRecipeNames(){
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        ArrayList<String> recipeNames = new ArrayList<String>();
+
+        if(cursor.moveToFirst()){
+            recipeNames.add(cursor.getString(0));
+        }
+        while(cursor.moveToNext()){
+            recipeNames.add(cursor.getString(0));
+        }
+
+        return recipeNames;
+    }
+
+
 
 }

@@ -10,7 +10,6 @@
         android:id="@+id/saveButton"
         android:layout_width="180dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginLeft="8dp"
         android:onClick="onSave"
         android:text="@string/Save_Recipe"
@@ -18,20 +17,69 @@
         app:layout_constraintRight_toLeftOf="@+id/viewButton"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.5" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <Button
         android:id="@+id/viewButton"
         android:layout_width="180dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginRight="8dp"
         android:onClick="onView"
         android:text="@string/View_My_Recipes"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toRightOf="@+id/saveButton"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/recipeNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Recipe"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/servingSizeView"
+        app:layout_constraintVertical_bias="0.56"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/servingSizeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Serving_Size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeNameView"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ListView
+        android:id="@+id/ingredientList"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servingSizeView"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintVertical_bias="0.454" />
 
 </android.support.constraint.ConstraintLayout>

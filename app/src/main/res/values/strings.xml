@@ -4,4 +4,6 @@
     <string name="View_My_Recipes">View my recipes</string>
     <string name="New_Recipe">New Recipe</string>
     <string name="Loading">Loading...</string>
+    <string name="Recipe">Recipe</string>
+    <string name="Serving_Size">Serving Size</string>
 </resources>
