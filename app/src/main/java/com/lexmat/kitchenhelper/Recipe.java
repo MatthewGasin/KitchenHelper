@@ -10,7 +10,7 @@ public class Recipe {
     final static String INGREDIENT_SEPARATOR = "~";
 
     private String ingredientNames;
-    private String    ingredientAmounts;
+    private String ingredientAmounts;
     private String ingredientTypes;
 
     /* Example recipe

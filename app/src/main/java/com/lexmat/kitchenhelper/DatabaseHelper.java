@@ -52,7 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         Cursor cursor = db.rawQuery(query, null);
 
         ArrayList<String> recipeNames = new ArrayList<String>();
-
         if(cursor.moveToFirst()){
             recipeNames.add(cursor.getString(0));
         }

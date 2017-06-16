@@ -6,4 +6,15 @@
     <string name="Loading">Loading...</string>
     <string name="Recipe">Recipe</string>
     <string name="Serving_Size">Serving Size</string>
+    <string name="Pancakes">Pancakes</string>
+    <string name="Batter">Batter</string>
+    <string name="Milk">Milk</string>
+    <string name="Egg">Egg</string>
+    <string name="Oil">Oil</string>
+    <string name="One">1</string>
+    <string name="ThreeFourths">3/4</string>
+    <string name="Cup">cup</string>
+    <string name="Space" />
+    <string name="Tablespoon">tablespoon</string>
+    <string name="Recipe_Saved">Recipe Saved!</string>
 </resources>

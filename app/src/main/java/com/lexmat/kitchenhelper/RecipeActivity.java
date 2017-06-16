@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class RecipeActivity extends AppCompatActivity {
@@ -40,7 +39,8 @@ public class RecipeActivity extends AppCompatActivity {
     }
 
     public void onSave(View view) {
-        Toast.makeText(getApplicationContext(), "Recipe Saved!", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(getApplicationContext(), R.string.Recipe_Saved, Toast.LENGTH_SHORT).show();
     }
 
     public void onView(View view) {

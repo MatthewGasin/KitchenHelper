@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class SaveActivity extends AppCompatActivity {
@@ -28,7 +27,12 @@ public class SaveActivity extends AppCompatActivity {
     }
 
     public void onNew(View view) {
+        //start the recipe activity with the default recipe
         Intent intent = new Intent(this, RecipeActivity.class);
+        intent.putExtra("name",getString(R.string.Recipe));
+        intent.putExtra("ingredientNames", " ");
+        intent.putExtra("ingredientAmounts", " ");
+        intent.putExtra("ingredientTypes", " ");
         startActivity(intent);
     }
 }
