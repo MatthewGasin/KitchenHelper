@@ -28,10 +28,10 @@ public class Recipe {
     }
 
     public Recipe() {
-        this.name = "default";
-        this.ingredientNames = "default";
-        this.ingredientAmounts = "default";
-        this.ingredientTypes = "default";
+        this.name = " ";
+        this.ingredientNames = " ";
+        this.ingredientAmounts = " ";
+        this.ingredientTypes = " ";
     }
 
     public String getName() {

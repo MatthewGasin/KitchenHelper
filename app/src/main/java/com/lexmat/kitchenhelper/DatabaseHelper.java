@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,33 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
 
         return recipeNames;
+    }
+
+    public Recipe getRecipe(String name){
+        //I tried using SQL once...
+        /*String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_1 + "=" + name;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            return new Recipe(name,cursor.getString(1),cursor.getString(2),cursor.getString(3));
+        }else{
+            return null;
+        }*/
+
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            if(cursor.getString(0).equals(name)){
+                return new Recipe(name,cursor.getString(1),cursor.getString(2),cursor.getString(3));
+            }
+        }
+        while(cursor.moveToNext()){
+            if(cursor.getString(0).equals(name)){
+                return new Recipe(name,cursor.getString(1),cursor.getString(2),cursor.getString(3));
+            }
+        }
+        return null;
     }
 
 
