@@ -17,4 +17,5 @@
     <string name="Space" />
     <string name="Tablespoon">tablespoon</string>
     <string name="Recipe_Saved">Recipe Saved!</string>
+    <string name="delete">Delete</string>
 </resources>
